@@ -87,7 +87,6 @@
 //         }
 //     }
 //     return x;
-
 //  }
 // int main(){
 //  int matrix[3][3]={1, 0, 0, 0, 1, 0, 0, 0, 1};
@@ -100,29 +99,30 @@
 // }
 
 
+
 //6
-#include<stdio.h>
-
-int main(){
- int matrix[2][3]={1, 3, 0, 9, 1, 4};
-
-int sumc=0;
-for( int i=0; i<2; i++){
-    int sumr=0;
-    for(int j=0; j<3; j++){
+// #include<stdio.h>
+// int main(){
+//  int matrix[2][3]={1, 3, 0, 9, 1, 4};
+// int sumc=0;
+// for( int i=0; i<2; i++){
+//     int sumr=0;
+//     for(int j=0; j<3; j++){
     
-    sumr+=matrix[i][j];
-}
-printf("The sum of the row %d is %d\n", i+1 , sumr);
-}
+//     sumr+=matrix[i][j];
+// }
+// printf("The sum of the row %d is %d\n", i+1 , sumr);
+// }
 
-for( int i=0; i<3; i++){
-    int sumc=0;
-    for(int j=0; j<2; j++){
+// for( int i=0; i<3; i++){
+//     int sumc=0;
+//     for(int j=0; j<2; j++){
     
-    sumc+=matrix[j][i];
-}
-printf("The sum of the column %d is %d\n", i+1 , sumc);
-}
+//     sumc+=matrix[j][i];
+// }
+// printf("The sum of the column %d is %d\n", i+1 , sumc);
+// }
+// }
 
-}
+
+
