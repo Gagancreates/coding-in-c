@@ -1,2 +1,2 @@
 # coding-in-c
-Implementing all the things that I learn about C. Here I practice what was done in college and what I learn on my own.
+This is where I practice everything I learn about C, whether it's from college lectures or my own exploration. I use this space to reinforce concepts, experiment with code, and truly understand how things work through hands-on implementation.
