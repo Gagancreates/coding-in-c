@@ -88,14 +88,44 @@
 
 //4
 // #include<stdio.h>
-// int print(int n){
-//     if(n==0){
-//      return 0;
+// #include<string.h>
+// int palindrome(char a[], int left, int right){
+//     if(left>=right){
+//         return 1;
 //     }
-//     printf("%d\n",n);
-//     print(n-1);
+//     if(a[left]!=a[right]){
+//         return 0;
+//     }
+//     return palindrome(a, left+1, right-1);
 // }
+
 // int main(){
-//     int n=5;
-//     print(n);
+//     char a[]="osmclim";
+//     int l=strlen(a);
+//     if(palindrome(a, 0, l-1)){
+//         printf("yes");
+
+//     }
+//     else{
+//         printf("no");
+//     }
 // }
+
+
+//6
+// #include<stdio.h>
+// #include<string.h>
+// extern int x;
+// int main (){
+    
+//     printf("%d",x );
+// }
+
+#include <stdio.h>
+enum traffic { red, yellow, green};
+int main(){
+enum traffic light=red;
+if(light ==red){
+    printf("%d", red);}
+
+}
