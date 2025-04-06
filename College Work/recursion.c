@@ -121,11 +121,11 @@
 //     printf("%d",x );
 // }
 
-#include <stdio.h>
-enum traffic { red, yellow, green};
-int main(){
-enum traffic light=red;
-if(light ==red){
-    printf("%d", red);}
+// #include <stdio.h>
+// enum traffic { red, yellow, green};
+// int main(){
+// enum traffic light=red;
+// if(light ==red){
+//     printf("%d", red);}
 
-}
+// }
