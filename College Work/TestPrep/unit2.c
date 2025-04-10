@@ -131,7 +131,7 @@
 
 
 
-//sum of rows and cols
+// //sum of rows and cols
 // #include<stdio.h>
 // int rowsum( int arr[3][3], int row, int col){
 //         for(int i=0; i<row; i++){
@@ -150,9 +150,109 @@
 
 
 //using pointers
+// #include<stdio.h>
+// int main(){
+//     char a[3]="abc";
+//     char *p=a;
+//     printf("%c", *(p+1));
+// }
+
+
+
+// Program to swap first and last elements of the array of integers using array of pointers 
+// and display the array of integers using array of pointers.
+
+
+////////////////////////////////
+// #include<stdio.h>
+// void numbers(int n){
+//     if(n==0){
+//         return;}
+//     printf("%d\n", n);
+//     numbers(n-1);
+//     }
+// int main(){
+//     int n=10;
+//     numbers(n);
+// }
+
+
+// #include<stdio.h>
+// int numbers(int n){
+//     if(n==0){
+//         return 1;}
+//     return n * numbers(n-1);
+//     }
+// int main(){
+//     int n=5;
+//     int fact=numbers(n);
+
+//     printf("%d", fact);
+// }
+
+
+
 #include<stdio.h>
+int add(int n, int m){
+    if(m>n){
+        int temp=m;
+        m=n;
+        n=temp;
+    }
+    if(m==0){
+        return n;
+    }
+    add(n+1, m-1);
+    }
+
+    int sub(int n, int m){
+        // if(m>n){
+        //     int temp=m;
+        //     m=n;
+        //     n=temp;
+           
+        // }
+        if(m==0){
+            return n;
+        }
+        sub(n-1, m-1);
+        }
+
+        int mult(int n, int m){
+            if(m>n){
+                    int temp=m;
+                    m=n;
+                    n=temp;
+                   
+                }
+            if(m==1){
+                return n;
+            }
+            return n + mult(n, m-1);
+                }
+
+//sum of digits
+            int sum(int n){
+                if(n==0){
+                    return 0;
+                }
+                return n%10 + sum(n/10);
+            }
 int main(){
-    char a[3]="abc";
-    char *p=a;
-    printf("%c", *(p+1));
+    int n=5;
+    int m=3;
+    int x=add(n, m);
+    int y=sub(m, n);
+    int z=mult(m, n);
+    int s=sum(1029);
+
+    printf("%d\n", x);
+    printf("%d\n", y);
+    printf("%d\n", z);
+    printf("%d", s);
+
+    
+
 }
+
+
