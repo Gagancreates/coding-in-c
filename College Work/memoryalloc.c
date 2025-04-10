@@ -9,7 +9,7 @@ void foo(int param) {         // Text segment
     static int static_var = 0;// Initialized data segment
     int* dynamic_var = malloc(sizeof(int)); // Heap
     *dynamic_var = 20;
-    free(dynamic_var);        // Deallocate heap memory
+    free(dynamic_var);        
 }
 
 int main() {                  // Text segment

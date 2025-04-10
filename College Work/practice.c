@@ -128,3 +128,22 @@ int main(){
 
 
 
+#include <stdio.h>
+
+int binarySearch(int arr[], int n, int target) {
+    int low = 0, high = n - 1;
+
+    while (low <= high) {
+        int mid = (low + high) / 2;
+
+        if (arr[mid] == target)
+            return mid; // target found, return index
+        else if (arr[mid] < target)
+            low = mid + 1; // search right half
+        else
+            high = mid - 1; // search left half
+    }
+
+    return -1; // target not found
+}
+
