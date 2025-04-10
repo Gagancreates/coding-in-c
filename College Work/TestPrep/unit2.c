@@ -192,67 +192,133 @@
 
 
 
-#include<stdio.h>
-int add(int n, int m){
-    if(m>n){
-        int temp=m;
-        m=n;
-        n=temp;
-    }
-    if(m==0){
-        return n;
-    }
-    add(n+1, m-1);
-    }
+// #include<stdio.h>
+// int add(int n, int m){
+//     if(m>n){
+//         int temp=m;
+//         m=n;
+//         n=temp;
+//     }
+//     if(m==0){
+//         return n;
+//     }
+//     add(n+1, m-1);
+//     }
 
-    int sub(int n, int m){
-        // if(m>n){
-        //     int temp=m;
-        //     m=n;
-        //     n=temp;
+//     int sub(int n, int m){
+//         // if(m>n){
+//         //     int temp=m;
+//         //     m=n;
+//         //     n=temp;
            
-        // }
-        if(m==0){
-            return n;
-        }
-        sub(n-1, m-1);
-        }
+//         // }
+//         if(m==0){
+//             return n;
+//         }
+//         sub(n-1, m-1);
+//         }
 
-        int mult(int n, int m){
-            if(m>n){
-                    int temp=m;
-                    m=n;
-                    n=temp;
+//         int mult(int n, int m){
+//             if(m>n){
+//                     int temp=m;
+//                     m=n;
+//                     n=temp;
                    
-                }
-            if(m==1){
-                return n;
-            }
-            return n + mult(n, m-1);
-                }
+//                 }
+//             if(m==1){
+//                 return n;
+//             }
+//             return n + mult(n, m-1);
+//                 }
 
-//sum of digits
-            int sum(int n){
-                if(n==0){
-                    return 0;
-                }
-                return n%10 + sum(n/10);
-            }
-int main(){
-    int n=5;
-    int m=3;
-    int x=add(n, m);
-    int y=sub(m, n);
-    int z=mult(m, n);
-    int s=sum(1029);
+// //sum of digits
+//             int sum(int n){
+//                 if(n==0){
+//                     return 0;
+//                 }
+//                 return n%10 + sum(n/10);
+//             }
+// int main(){
+//     int n=5;
+//     int m=3;
+//     int x=add(n, m);
+//     int y=sub(m, n);
+//     int z=mult(m, n);
+//     int s=sum(1029);
 
-    printf("%d\n", x);
-    printf("%d\n", y);
-    printf("%d\n", z);
-    printf("%d", s);
+//     printf("%d\n", x);
+//     printf("%d\n", y);
+//     printf("%d\n", z);
+//     printf("%d", s);
 
     
 
-}
+// }
 
 
+
+
+// #include<stdio.h>
+// int binary(int arr[], int n, int key){
+//     int low=0;
+//     int high = n-1;
+//     while(low<=high){
+//         int mid=(low + high)/2;
+//         if(arr[mid]==key){
+//             return mid;
+//         }
+//         else if(arr[mid]< key){
+//             low=mid+1;
+//         }
+//         else{
+//         high = mid-1;
+//     }}
+// return -1;
+// }
+// int main(){
+//     int arr[5]={ 1, 2, 3, 4, 5};
+//     int n=5;
+//     int key=9;
+//     printf("%d", binary( arr, n, key));
+    
+// }
+
+
+
+// selection sort
+
+#include<stdio.h>
+void selection(int arr[], int n){
+    for(int i=0; i<n-1;i++){
+        int min=i;
+        for(int j=i+1; j<n; j++){
+            if(arr[j]<arr[min]){
+                min=j;
+            }
+            int temp=arr[i];
+            arr[i]=arr[min];
+            arr[min]= temp;
+        }
+    }
+  
+    }
+    void printArray(int arr[], int n){
+        for(int i = 0; i < n; i++){
+            printf("%d ", arr[i]);
+        }
+        printf("\n");
+    }
+    int main(){
+        int arr[] = {64, 25, 12, 22, 11};
+        int n = sizeof(arr) / sizeof(arr[0]);
+    
+        printf("Original array: ");
+        printArray(arr, n);
+    
+        selectionsort(arr, n);
+    
+        printf("Sorted array: ");
+        printArray(arr, n);
+    
+        return 0;
+    }
