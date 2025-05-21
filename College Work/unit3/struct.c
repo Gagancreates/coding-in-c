@@ -1,59 +1,51 @@
-// #include<stdio.h>
-// #include<string.h> 
-// #include<stdlib.h>
-// #include <ctype.h>
+#include<stdio.h>
+#include<string.h> 
+#include<stdlib.h>
+#include <ctype.h>
 
-// //Pass Structure by Value
-
-
-// //     struct Student{
-// //         int id;
-// //         char name[50];
-// //         float marks;
-// //     };
-// //     void printn(struct Student s){
-// //         printf("ID: %d\nName: %s\nMarks:%f", s.id, s.name, s.marks);
-// //     }
-// //     int main(){
-// //     struct Student s1={10, "hello", 92.3};
-// //         printn(s1);
-// // }
+//Pass Structure by Value
 
 
-
-// //Pass Structure by Pointer (Efficient)
-// // struct Student{
-// //     int id;
-// //      char name[50];
-// //     float marks;
-// // };
-
-// // void updatenewmarks(struct Student *s, int newmarks){
-// //     s->marks=newmarks;    // use '->' to access members via pointer
-// // }
-
-// // void updatename(struct Student *s, char *newname){
-// //     strcpy(s->name, newname);    // use '->' to access members via pointer
-// // }
-// // int main(){
-// //     struct Student s1={10, "hello", 92.3};
-// //     int newmarks=98.0;
-// //     printf("old marks=%f", s1.marks);
-// //     printf("old name=%s", s1.name);
-
-// //     updatenewmarks(&s1, newmarks);
-// // char newname[100]="Ggagan";
-// //     updatename(&s1, newname);
-// //     printf("updated marks=%f", s1.marks);
-// //      printf("updated name=%s", s1.name);
-
-// // struct Student{
-// //     int id;
-// //      char name[50];
-// //     float marks;
-// // };
+//     struct Student{
+//         int id;
+//         char name[50];
+//         float marks;
+//     };
+//     void printn(struct Student s){
+//         printf("ID: %d\nName: %s\nMarks:%f", s.id, s.name, s.marks);
+//     }
+//     int main(){
+//     struct Student s1={10, "hello", 92.3};
+//         printn(s1);
+// }
 
 
+
+//Pass Structure by Pointer (Efficient)
+// struct Student{
+//     int id;
+//      char name[50];
+//     float marks;
+// };
+
+// void updatenewmarks(struct Student *s, int newmarks){
+//     s->marks=newmarks;    // use '->' to access members via pointer
+// }
+
+// void updatename(struct Student *s, char *newname){
+//     strcpy(s->name, newname);    // use '->' to access members via pointer
+// }
+// int main(){
+//     struct Student s1={10, "hello", 92.3};
+//     int newmarks=98.0;
+//     printf("old marks=%f", s1.marks);
+//     printf("old name=%s", s1.name);
+
+//     updatenewmarks(&s1, newmarks);
+// char newname[100]="Ggagan";
+//     updatename(&s1, newname);
+//     printf("updated marks=%f", s1.marks);
+//      printf("updated name=%s", s1.name);
 
 // struct Student{
 //     int id;
@@ -62,44 +54,173 @@
 // };
 
 
-// void read( struct Student *s){
-//     printf("Please enter id, name and marks by new line");
-//     scanf("%d \n %s\n%f", &s->id, s->name, &s->marks);
+
+// 
+
+
+//2
+// struct Data{
+//     int date;
+//     int month;
+//     int year;
+// };
+
+// void read(struct Data *d){
+//         scanf("%d %d %d", &d->date, &d->month, &d->year);
+// }
+// void disp(struct Data d){
+//     printf ("date: %d\nmonth: %d\n year: %d\n", d.date, d.month, d.year);
+// }
+// int main(){
+
+//     struct Data d;
+//     printf("enter the values of date, month and year");
+//     read(&d);
+//     disp(d);
 // }
 
-// void display( struct Student s){
-//     printf("ID: %d\nName:%s\nMarks:%f", s.id, s.name, s.marks);
 
+
+//3
+// struct Data{
+//     char name[100];
+//     int m1,m2,m3;
+// };
+
+// void read(struct Data *d){
+//         scanf("%s %d %d %d", d->name, &d->m1, &d->m2, &d->m3);
 // }
+
+// void avg(struct Data d){
+//     float a=(d.m1+ d.m2 + d.m3)/3.0;
+//     printf("The avg marks of the student is %f", a);
+// }
+// void update(struct Data *d){
+//     printf("Enter the new marks for m1");
+//     scanf("%d", &d->m1);
+// }
+// void disp(struct Data d){
+//     printf ("name: %s\nm1: %d\n m2: %d\n", d.name, d.m1, d.m2);
+// }
+// int main(){
+
+//     struct Data d;
+//     printf("enter the values of name, m1, m2 and m3: ");
+//     read(&d);
+//     // avg(d);
+//     update(&d);
+//     disp(d);
+// }
+
+
+
+
+// array of structures
+// struct Data{
+//     char name[100];
+//     int m1;
+// };
 
 // int main(){
-//     struct Student p;
-//     read(&p);
-//     display(p);
+//     struct Data d[3];
+//     for( int i=0; i<3; i++){
+//         printf(" enter the detail for student %d\n",i+1);
+//         printf("Enter the name: ");
+//         scanf("%s", d[i].name);
+//         printf("enter marks: ");
+//         scanf("%d", &d[i].m1);
+
+//     }
+
+//      printf("\nStudent Details:\n");
+//     for (int i = 0; i < 3; i++) {
+//         printf("Name: %s, Marks: %d\n", d[i].name, d[i].m1);
+//     }
+
+//     float avg=0;
+//      for (int i = 0; i < 3; i++) {
+//         avg+=d[i].m1;
+//     }
+//     printf("The avg marks of the students are %f", avg/3.0);
+
+//     int max=0;
+//     int index=0;
+//     for (int i = 0; i < 3; i++) {
+//         if(d[i].m1>max){
+//             max=d[i].m1;
+//             index=i;
+//         }
+//     }
+//     printf("The student with highest marks is\n name: %s\nmarks: %d", d[index].name,d[index].m1 );
+
 // }
 
 
-#include <stdio.h>
-#include <string.h>
 
-struct Player {
-    int id;
-    char name[50];
+// the same thing but we are going to assign a funtion for each task
+struct Data{
+    char name[100];
+    int m1;
 };
+void read(struct Data d[], int n){
+    for( int i=0; i<n; i++){
+        printf(" enter the detail for student %d\n",i+1);
+        printf("Enter the name: ");
+        scanf("%s", d[i].name);
+        printf("enter marks: ");
+        scanf("%d", &d[i].m1);
+    }
 
-struct Player modify(struct Player p);
-struct Player modify(struct Player p) {
-    strcpy(p.name, "Sourav");  // modifying the copy
-    return p;                  // return modified copy
+    }
+void disp(struct Data d[], int n){
+    for (int i = 0; i < n; i++) {
+        printf("Name: %s, Marks: %d\n", d[i].name, d[i].m1);
+    }
 }
-int main() {
-    struct Player p1 = {20, "sachin"};
-    printf("Before change: %s\n", p1.name);
-
-    p1 = modify(p1); // function returns modified copy
-    printf("After change: %s\n", p1.name);
-
-    return 0;
+void avg(struct Data d[], int n){
+    float avg=0;
+     for (int i = 0; i < 3; i++) {
+        avg+=d[i].m1;
+    }
+    printf("The avg marks of the students are %f", avg/n);
 }
 
+//sorting based on marks
+void sort( struct Data d[], int n){
+    struct Data temp;
+    for(int i=0; i<n-1; i++){
+        for(int j=0; j<n-i-1; j++){
+            if(d[j].m1<d[j+1].m1){
+                temp = d[j];
+                d[j]=d[j+1];
+                d[j+1]=temp;
+            }
+        }
+    }
 
+}
+int main(){
+    int n;
+    printf("enter the size");
+    scanf("%d", &n);
+    struct Data d[n];
+    read(d, n);
+     printf("\nStudent Details:\n");
+    disp(d, n);
+
+    avg(d,n);
+    
+
+    int max=0;
+    int index=0;
+    for (int i = 0; i < 3; i++) {
+        if(d[i].m1>max){
+            max=d[i].m1;
+            index=i;
+        }
+    }
+    printf("The student with highest marks is\n name: %s\nmarks: %d", d[index].name,d[index].m1 );
+    sort(d, n);
+    printf("after sort\n");
+    disp(d, n);
+}
