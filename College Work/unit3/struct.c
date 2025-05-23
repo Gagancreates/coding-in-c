@@ -156,71 +156,165 @@
 // }
 
 
-
+//////// IMPORTANT CODE SNIPPET/////////////////////////////
 // the same thing but we are going to assign a funtion for each task
+// struct Data{
+//     char name[100];
+//     int m1;
+// };
+// void read(struct Data d[], int n){
+//     for( int i=0; i<n; i++){
+//         printf(" enter the detail for student %d\n",i+1);
+//         printf("Enter the name: ");
+//         scanf("%s", d[i].name);
+//         printf("enter marks: ");
+//         scanf("%d", &d[i].m1);
+//     }
+
+//     }
+
+// void disp(struct Data d[], int n){
+//     for (int i = 0; i < n; i++) {
+//         printf("Name: %s, Marks: %d\n", d[i].name, d[i].m1);
+//     }
+// }
+// void avg(struct Data d[], int n){
+//     float avg=0;
+//      for (int i = 0; i < 3; i++) {
+//         avg+=d[i].m1;
+//     }
+//     printf("The avg marks of the students are %f", avg/n);
+// }
+
+// void top(struct Data d[], int n){
+//     int max=0;
+//     int index=0;
+//     for (int i = 0; i < n; i++) {
+//         if(d[i].m1>max){
+//             max=d[i].m1;
+//             index=i;
+//         }
+//     }
+//     printf("The student with highest marks is\n name: %s\nmarks: %d", d[index].name,d[index].m1 );
+// }
+
+// //sorting based on marks
+// void sortmarks( struct Data d[], int n){
+//     struct Data temp;
+//     for(int i=0; i<n-1; i++){
+//         for(int j=0; j<n-i-1; j++){
+//             if(d[j].m1<d[j+1].m1){
+//                 temp = d[j];
+//                 d[j]=d[j+1];
+//                 d[j+1]=temp;
+//             }
+//         }
+//     }
+
+// }
+
+// //sorting based on alphabetical order
+// void sortalpha( struct Data d[], int n){
+//     struct Data temp;
+//     for(int i=0; i<n-1; i++){
+//         for(int j=0; j<n-i-1; j++){
+//             if(strcmp(d[j].name, d[j+1].name)>0){
+//                 temp=d[j];
+//                 d[j]=d[j+1];
+//                 d[j+1]=temp;
+//             }
+//         }
+//     }
+// }
+
+// //searching based on marks
+// void searchmarks( struct Data d[], int n, int key){
+//     int found =0;
+//     for(int i=0; i<n;i++){
+//         if(d[i].m1==key){
+//             printf("The marks is found at index %d", i);
+//             found=1;
+//             break;
+//         }
+//     }
+//     if(!found){
+//         printf("That marks cannot be found");
+//     }
+// }
+
+// //search by name
+// void searchname( struct Data d[], int n, char key[]){
+//     int found =0;
+//     for(int i=0; i<n;i++){
+//         if(strcmp(d[i].name, key)==0){
+//             printf("The name is found at index %d", i);
+//             found=1;
+//             break;
+//         }
+//     }
+//     if(!found){
+//         printf("That name cannot be found");
+//     }
+// }
+// int main(){
+//     int n;
+//     printf("enter the size");
+//     scanf("%d", &n);
+//     struct Data d[n];
+//     read(d, n);
+//      printf("\nStudent Details:\n");
+//     disp(d, n);
+//     avg(d,n);
+//     top(d, n);
+//     sortmarks(d, n);
+//     printf("after sort\n");
+//     disp(d, n);
+//     printf("after sort alphabetically:\n");
+//     sortalpha(d, n);
+//     disp(d, n);
+//     searchmarks(d, n, 100);
+//         searchmarks(d, n, 120);
+//         searchname(d, n, "gagan");
+//         searchname(d, n, "hello");
+
+
+// }
+
+
+
+
+// the same but using the concept of pointer to an array of structures
 struct Data{
     char name[100];
     int m1;
 };
-void read(struct Data d[], int n){
-    for( int i=0; i<n; i++){
-        printf(" enter the detail for student %d\n",i+1);
-        printf("Enter the name: ");
-        scanf("%s", d[i].name);
-        printf("enter marks: ");
-        scanf("%d", &d[i].m1);
-    }
 
-    }
-void disp(struct Data d[], int n){
-    for (int i = 0; i < n; i++) {
-        printf("Name: %s, Marks: %d\n", d[i].name, d[i].m1);
-    }
+void readpointers( struct Data *ptr, int n){
+    for(int i=0; i<n;i++){
+    printf("Please enter the details of student %d\n", i+1);
+    printf("Enter the name: ");
+    scanf("%s",(ptr+i)->name );
+    printf("Enter the marks: ");
+    scanf("%d", &(ptr+i)->m1);
 }
-void avg(struct Data d[], int n){
-    float avg=0;
-     for (int i = 0; i < 3; i++) {
-        avg+=d[i].m1;
-    }
-    printf("The avg marks of the students are %f", avg/n);
 }
 
-//sorting based on marks
-void sort( struct Data d[], int n){
-    struct Data temp;
-    for(int i=0; i<n-1; i++){
-        for(int j=0; j<n-i-1; j++){
-            if(d[j].m1<d[j+1].m1){
-                temp = d[j];
-                d[j]=d[j+1];
-                d[j+1]=temp;
-            }
-        }
-    }
 
+void disppointers( struct Data *ptr, int n){
+    for(int i=0; i<n;i++){
+    printf("the details of student %d\n", i+1);
+    printf("name: %s\n", (ptr+i)->name);
+    printf("marks: %d\n", (ptr+i)->m1);
+    
 }
+}
+
 int main(){
     int n;
-    printf("enter the size");
+    printf("enter the size: ");
     scanf("%d", &n);
     struct Data d[n];
-    read(d, n);
-     printf("\nStudent Details:\n");
-    disp(d, n);
-
-    avg(d,n);
-    
-
-    int max=0;
-    int index=0;
-    for (int i = 0; i < 3; i++) {
-        if(d[i].m1>max){
-            max=d[i].m1;
-            index=i;
-        }
-    }
-    printf("The student with highest marks is\n name: %s\nmarks: %d", d[index].name,d[index].m1 );
-    sort(d, n);
-    printf("after sort\n");
-    disp(d, n);
+    struct Data *ptr=d;
+    readpointers(ptr, n);
+    disppointers(ptr, n);
 }
