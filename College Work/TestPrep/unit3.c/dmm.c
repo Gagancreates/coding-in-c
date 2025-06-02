@@ -32,5 +32,12 @@ int main(){
     for(int i=0; i<new; i++){
         printf("%d", p[i]); // or *(p+i)
     }
+    // example of dangling pointer
+    int *p2=realloc(p, 4*sizeof(int));
+    printf("dangling pointer example: ");
+    printf("address p: %p\naddress p2: %p", p, p2);
+    for(int i=0; i<new; i++){
+        printf("%d", p2[i]); // or *(p+i)
+    }
     free(p);
 }
