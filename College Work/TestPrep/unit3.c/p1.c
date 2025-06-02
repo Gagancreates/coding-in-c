@@ -262,14 +262,16 @@ int main(){
 //     }
 
 
-//writing a strcmp function from scratch
-char a[100]="bzna";
-char b[10]="anna";
-// printf("%d", comp(a,b));
-// char *z=findch(a, 'n');
-// printf("found at %d", z-a);
-catt(a, b);
-printf("%s", a);
+// //writing a strcmp function from scratch
+// char a[100]="bzna";
+// char b[10]="anna";
+// // printf("%d", comp(a,b));
+// // char *z=findch(a, 'n');
+// // printf("found at %d", z-a);
+// catt(a, b);
+// printf("%s", a);
+
+
 
 
 }
