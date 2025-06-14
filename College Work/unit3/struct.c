@@ -310,11 +310,11 @@ void disppointers( struct Data *ptr, int n){
 }
 
 int main(){
-    int n;
-    printf("enter the size: ");
-    scanf("%d", &n);
-    struct Data d[n];
-    struct Data *ptr=d;
-    readpointers(ptr, n);
-    disppointers(ptr, n);
+    // int n;
+    // printf("enter the size: ");
+    // scanf("%d", &n);
+    // // struct Data d[];
+    // // struct Data *ptr=d;
+    // readpointers(ptr, n);
+    // disppointers(ptr, n);
 }
