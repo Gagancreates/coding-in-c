@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+enum waa{ l, m, n, o, p};
 int main(){
     // char a[]={ 'H', 'e', 'l', 'l', 'o', '\0'};
     // printf("The size of the string is %d\n", sizeof(a));
@@ -34,12 +35,15 @@ int main(){
 
 
     //string pointed by char pointer( this is read only storage of the string and you cannnot modify it)
-    char *p="hello";
-    printf("The size of the string is %d\n", sizeof(p));
-    // p[0]='H'; // this will give an error because the string is in read only memory
-    printf("%s\n", p);
-    p++;
-    printf("%s\n", p);
+    // char *p="hello";
+    // printf("The size of the string is %d\n", sizeof(p));
+    // // p[0]='H'; // this will give an error because the string is in read only memory
+    // printf("%s\n", p);
+    // p++;
+    // printf("%s\n", p);
 
+    enum waa w;
+    w=p;
+    printf("%d", m);
     
 }
