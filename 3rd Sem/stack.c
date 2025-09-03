@@ -30,8 +30,19 @@ void push(struct stack* s, int a){
     }
 }
 
-void pop( struct stack* s){
+int pop( struct stack* s){
     // doing LIFO
+    if(isEmpty(s)){
+        printf("ALready empty, nothing to pop");
+        return -1;
+
+    }
+    int popped=s->arr[(s->top)];
+    printf("popped element %d\n",popped);
+    (s->top)--;
+    return popped;
+
+
 
 }
 
@@ -47,9 +58,11 @@ int main()
 {
 struct stack* s=createStack();
 init(s);
-push(s, 10);
-push(s, 20);
-push(s, 30);
+// push(s, 10);
+// push(s, 20);
+// push(s, 30);
+pop(s);
+
 // push(s, 40);
 // push(s, 50);
 // push(s, 60);
@@ -58,7 +71,7 @@ push(s, 30);
 
 int n=s->top;
 printf("Printing the elements of the stack: \n");
-for( int i=0; i<=5; i++ ){
+for( int i=0; i<=(s->top); i++ ){
     printf("%d\n", s->arr[i]);
 
 }

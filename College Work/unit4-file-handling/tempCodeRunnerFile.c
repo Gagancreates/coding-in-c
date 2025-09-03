@@ -1,1 +1,1 @@
-#include<stdlib.h>
+fputc(ch, stdout);
