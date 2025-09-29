@@ -1,0 +1,41 @@
+
+struct pq{
+    int data;
+    int pty;
+}
+
+
+struct pq q[SIZE]
+int count=0;
+
+
+void enq(int x, int pty){
+    struct pq key
+    key.pty=pty;
+    key.data=x;
+
+    int j=count - 1;
+    while(j>=0 && q[j].pty<key){
+        q[j+1]=q[j];
+        j--;
+    }
+    q[j+1]=key;
+    count++;
+}
+
+
+struct deq(){
+    struct pq item;
+    if( empty()){
+        item.data=0;
+        item.pty=-1;
+    }
+
+    else{
+        item=q[0];
+        for ( int i=1; i<count; i++){
+            q[i-1]=q[i];
+        }
+        count--;
+    }
+}
